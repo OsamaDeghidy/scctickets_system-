@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}لوحة تحكم المشرف{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>لوحة تحكم المشرف</h2>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>العنوان</th>
+                <th>الحالة</th>
+                <th>تاريخ الإنشاء</th>
+                <th>الوقت الإجمالي في التقدم</th>
+                <th>أنشئت بواسطة</th>
+                <th>مرحل إلى</th>
+                <th>مستوى الأهمية</th>
+                <th>الإجراء</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket.title }}</td>
+                <td>{{ ticket.status }}</td>
+                <td>{{ ticket.created_at }}</td>
+                <td>{{ ticket.get_total_in_progress_time }}</td>
+                <td>{{ ticket.created_by.user.username }}</td>
+                <td>{{ ticket.assigned_to.user.username }}</td>
+                <td>{{ ticket.difficulty_level }}</td>
+                <td><a href="{% url 'assign_ticket' ticket.id %}" class="btn btn-primary btn-sm">تعيين</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'profile' %}" class="btn btn-secondary mt-3">العودة إلى الملف الشخصي</a>
+</div>
+{% endblock %}

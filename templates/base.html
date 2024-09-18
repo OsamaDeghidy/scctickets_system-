@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}نظام إدارة التذاكر{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/themify-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/flag-icon-css/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/selectFX/css/cs-skin-elastic.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/jqvmap/dist/jqvmap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar-nav .nav-link {
+            color: black !important;
+            margin-left: 15px;
+        }
+        .navbar-nav .nav-link:hover {
+            color: red !important;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+        .footer p {
+            margin: 0;
+            color: #6c757d;
+        }
+        .left-panel {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #343a40;
+            color: white;
+            padding-top: 20px;
+        }
+        .left-panel a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+        .left-panel a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .left-panel {
+                width: 100%;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+        .dataTables_wrapper .dataTables_filter {
+            float: right;
+            text-align: right;
+        }
+        .dataTables_wrapper .dataTables_paginate {
+            float: right;
+            text-align: right;
+        }
+        {% block extra_css %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+    {% block auth %}
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./">نظام التذاكر</a>
+                <a class="navbar-brand hidden" href="./">نظام التذاكر</a>
+            </div>
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        {% if user.customuser.role == 'supervisor' %}
+                            <a href="{% url 'supervisor_dashboard' %}"> <i class="menu-icon fa fa-dashboard"></i>الرئيسية </a>
+                        {% elif user.customuser.role == 'service_provider' %}
+                            <a href="{% url 'service_provider_dashboard' %}"> <i class="menu-icon fa fa-dashboard"></i>الرئيسية </a>
+                        {% else %}
+                            <a href="{% url 'profile' %}"> <i class="menu-icon fa fa-dashboard"></i>الرئيسية </a>
+                        {% endif %}
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'create_ticket' %}"> <i class="menu-icon ti-email"></i>إنشاء تذكرة </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'profile' %}"> <i class="menu-icon ti-email"></i>قائمة التذاكر</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}"> <i class="menu-icon ti-email"></i>تسجيل الخروج </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}"> <i class="menu-icon ti-email"></i>تسجيل الدخول </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'register' %}"> <i class="menu-icon ti-email"></i>التسجيل </a>
+                    </li>
+                    {% endif %}
+                    
+                 
+                    
+                    
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+  
+        <main class="container mt-4">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+<div id="right-panel" class="right-panel">
+            {% block content %}
+            {% endblock %}
+</div>
+        </main>
+
+
+        <footer class="footer mt-5 py-3 bg-light">
+            <div class="container text-center">
+                <p>&copy; 2023 نظام إدارة التذاكر. جميع الحقوق محفوظة.</p>
+            </div>
+        </footer>
+    </div>
+    {% endblock %}
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/dashboard.js' %}"></script>
+    <script src="{% static 'assets/js/widgets.js' %}"></script>
+    <script src="{% static 'vendors/jqvmap/dist/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
+    <script src="{% static 'vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script>
+        (function($) {
+            "use strict";
+
+            jQuery('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
+            });
+        })(jQuery);
+    </script>
+    {% block extra_js %}
+    {% endblock %}
+</body>
+</html>

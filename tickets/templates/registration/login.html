@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}تسجيل الدخول{% endblock %}
+
+{% block auth %}
+<div class="container mt-4">
+    <div id="popup-overlay" class="popup-overlay"></div>
+    <div id="popup" class="popup">
+        <h2>اختر دورك</h2>
+        <button onclick="selectRole('employee')">موظف</button>
+        <button onclick="selectRole('supervisor')">مشرف</button>
+        <button onclick="selectRole('service_provider')">مقدم خدمة</button>
+    </div>
+
+    <h2 class="mb-4">تسجيل الدخول</h2>
+    <form method="post" class="bg-light p-4 rounded shadow">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-group mb-3">
+            <label for="id_username">اسم المستخدم:</label>
+            {{ form.username }}
+        </div>
+        <div id="password-field" class="form-group mb-3">
+            <label for="id_password">كلمة المرور:</label>
+            {{ form.password }}
+        </div>
+        <input type="hidden" id="role" name="role" value="">
+        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+    </form>
+    <p>ليس لديك حساب؟ <a href="{% url 'register' %}">سجل هنا</a></p>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-image: url('{% static "images/background.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: #fff;
+        z-index: 1000;
+    }
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function showPopup() {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup-overlay').style.display = 'block';
+    }
+
+    function hidePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popup-overlay').style.display = 'none';
+    }
+
+    function selectRole(role) {
+        document.getElementById('role').value = role;
+        if (role === 'employee') {
+            document.getElementById('password-field').style.display = 'none';
+            document.getElementById('id_password').value = 'defaultpassword123';
+        } else {
+            document.getElementById('password-field').style.display = 'block';
+            document.getElementById('id_password').value = '';
+        }
+        hidePopup();
+    }
+
+    window.onload = function() {
+        showPopup();
+    }
+</script>
+{% endblock %}

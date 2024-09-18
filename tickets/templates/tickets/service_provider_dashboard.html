@@ -1,0 +1,22 @@
+<!-- tickets/templates/tickets/service_provider_dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Provider Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.name }}</h1>
+    <h2>Your Assigned Tickets</h2>
+    <ul>
+        {% for ticket in tickets %}
+        <li>
+            <strong>{{ ticket.title }}</strong> - Status: {{ ticket.status }} 
+            (<a href="{% url 'update_ticket_status' ticket.id %}">Update Status</a>)
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

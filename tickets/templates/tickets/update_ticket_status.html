@@ -1,0 +1,24 @@
+<!-- tickets/templates/tickets/update_ticket_status.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Ticket Status</title>
+</head>
+<body>
+    <h1>Update Status for Ticket: {{ ticket.title }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="status">Set Status:</label>
+        <select name="status" id="status">
+            <option value="in_progress" {% if ticket.status == "in_progress" %} selected {% endif %}>In Progress</option>
+            <option value="on_hold" {% if ticket.status == "on_hold" %} selected {% endif %}>On Hold</option>
+            <option value="resolved" {% if ticket.status == "resolved" %} selected {% endif %}>Resolved</option>
+        </select>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

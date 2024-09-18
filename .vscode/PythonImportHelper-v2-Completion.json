@@ -1,0 +1,1168 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "shapely.wkb",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shapely.wkb",
+        "description": "shapely.wkb",
+        "detail": "shapely.wkb",
+        "documentation": {}
+    },
+    {
+        "label": "shapely.geometry",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shapely.geometry",
+        "description": "shapely.geometry",
+        "detail": "shapely.geometry",
+        "documentation": {}
+    },
+    {
+        "label": "shapely.ops",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shapely.ops",
+        "description": "shapely.ops",
+        "detail": "shapely.ops",
+        "documentation": {}
+    },
+    {
+        "label": "copy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copy",
+        "description": "copy",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "ogr",
+        "importPath": "osgeo",
+        "description": "osgeo",
+        "isExtraImport": true,
+        "detail": "osgeo",
+        "documentation": {}
+    },
+    {
+        "label": "osr",
+        "importPath": "osgeo",
+        "description": "osgeo",
+        "isExtraImport": true,
+        "detail": "osgeo",
+        "documentation": {}
+    },
+    {
+        "label": "Grammar",
+        "importPath": "booleano.parser",
+        "description": "booleano.parser",
+        "isExtraImport": true,
+        "detail": "booleano.parser",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluableParseManager",
+        "importPath": "booleano.parser",
+        "description": "booleano.parser",
+        "isExtraImport": true,
+        "detail": "booleano.parser",
+        "documentation": {}
+    },
+    {
+        "label": "SymbolTable",
+        "importPath": "booleano.parser",
+        "description": "booleano.parser",
+        "isExtraImport": true,
+        "detail": "booleano.parser",
+        "documentation": {}
+    },
+    {
+        "label": "Bind",
+        "importPath": "booleano.parser",
+        "description": "booleano.parser",
+        "isExtraImport": true,
+        "detail": "booleano.parser",
+        "documentation": {}
+    },
+    {
+        "label": "Variable",
+        "importPath": "booleano.operations",
+        "description": "booleano.operations",
+        "isExtraImport": true,
+        "detail": "booleano.operations",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib.auth.models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib.auth.validators",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.validators",
+        "description": "django.contrib.auth.validators",
+        "detail": "django.contrib.auth.validators",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "project.asgi",
+        "description": "project.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "project.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-6$rr+it)o+seav5^@&yp(qh6siwe0#+c^he8g3$hb=w=!8hu#q'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['localhost', '127.0.0.1']\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-6$rr+it)o+seav5^@&yp(qh6siwe0#+c^he8g3$hb=w=!8hu#q'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['localhost', '127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['localhost', '127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "ALLOWED_HOSTS = ['localhost', '127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'tickets',  # Add the new app here",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'tickets',  # Add the new app here\n]\nMIDDLEWARE = [",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'project.urls'",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "ROOT_URLCONF = 'project.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, 'templates')],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, 'templates')],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'project.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# settings.py",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# settings.py\nLOGIN_REDIRECT_URL = 'login'# أو أي URL تود إعادة التوجيه إليه بعد تسجيل الدخول",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# settings.py\nLOGIN_REDIRECT_URL = 'login'# أو أي URL تود إعادة التوجيه إليه بعد تسجيل الدخول\nLOGOUT_REDIRECT_URL = 'login'  # أو أي URL تود إعادة التوجيه إليه بعد تسجيل الخروج",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# settings.py\nLOGIN_REDIRECT_URL = 'login'# أو أي URL تود إعادة التوجيه إليه بعد تسجيل الدخول\nLOGOUT_REDIRECT_URL = 'login'  # أو أي URL تود إعادة التوجيه إليه بعد تسجيل الخروج",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# settings.py\nLOGIN_REDIRECT_URL = 'login'# أو أي URL تود إعادة التوجيه إليه بعد تسجيل الدخول\nLOGOUT_REDIRECT_URL = 'login'  # أو أي URL تود إعادة التوجيه إليه بعد تسجيل الخروج",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# settings.py\nLOGIN_REDIRECT_URL = 'login'# أو أي URL تود إعادة التوجيه إليه بعد تسجيل الدخول\nLOGOUT_REDIRECT_URL = 'login'  # أو أي URL تود إعادة التوجيه إليه بعد تسجيل الخروج",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# settings.py\nLOGIN_REDIRECT_URL = 'login'# أو أي URL تود إعادة التوجيه إليه بعد تسجيل الدخول\nLOGOUT_REDIRECT_URL = 'login'  # أو أي URL تود إعادة التوجيه إليه بعد تسجيل الخروج",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_REDIRECT_URL",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "LOGIN_REDIRECT_URL = 'login'# أو أي URL تود إعادة التوجيه إليه بعد تسجيل الدخول\nLOGOUT_REDIRECT_URL = 'login'  # أو أي URL تود إعادة التوجيه إليه بعد تسجيل الخروج",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGOUT_REDIRECT_URL",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "LOGOUT_REDIRECT_URL = 'login'  # أو أي URL تود إعادة التوجيه إليه بعد تسجيل الخروج",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "project.urls",
+        "description": "project.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('tickets.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\n    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "detail": "project.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "project.wsgi",
+        "description": "project.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "project.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "JQVMap",
+        "kind": 6,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "class JQVMap:\n  def __init__(self, name, language):\n    self.paths = {}\n    self.name = name\n    self.language = language\n    self.width = 0\n    self.height = 0\n    self.bbox = []\n  def addPath(self, path, code, name):\n    self.paths[code] = {\"path\": path, \"name\": name}",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "Converter",
+        "kind": 6,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "class Converter:\n  def __init__(self, config):\n    args = {\n      'buffer_distance': -0.4,\n      'simplify_tolerance': 0.2,\n      'longitude0': 0,\n      'projection': 'mill',\n      'name': 'world',\n      'width': 900,\n      'left': 0,",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "Geometry",
+        "kind": 6,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "class Geometry:\n  def __init__(self, geometry, properties):\n    self.geom = geometry\n    self.properties = properties\nclass GeometryProperty(Variable):\n  operations = set([\"equality\", \"membership\"])\n  def __init__(self, name):\n    self.name = name\n  def equals(self, value, context):\n    return context[self.name] == value",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "GeometryProperty",
+        "kind": 6,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "class GeometryProperty(Variable):\n  operations = set([\"equality\", \"membership\"])\n  def __init__(self, name):\n    self.name = name\n  def equals(self, value, context):\n    return context[self.name] == value\n  def belongs_to(self, value, context):\n    return value in context[self.name]\n  def is_subset(self, value, context):\n    return set(value).issubset(set(context[self.name]))",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "DataSource",
+        "kind": 6,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "class DataSource:\n  def __init__(self, config):\n    default_config = {\n      \"projection\": \"merc\",\n      \"longitude0\": 0\n    }\n    default_config.update(config)\n    self.config = default_config\n    self.spatialRef = osr.SpatialReference()\n    projString = '+proj='+str(self.config['projection'])+' +a=6381372 +b=6381372 +lat_0=0'",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "PolygonSimplifier",
+        "kind": 6,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "class PolygonSimplifier:\n  def __init__(self, geometries):\n    self.format = '%.8f %.8f'\n    self.tolerance = 0.05\n    self.geometries = geometries\n    connections = {}\n    counter = 0\n    for geom in geometries:\n      counter += 1\n      polygons = []",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "Processor",
+        "kind": 6,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "class Processor:\n  def __init__(self, config):\n    self.config = config\n  def process(self):\n    self.data_sources = {}\n    for action in self.config:\n      getattr(self, action['name'])( action, self.data_sources.get(\".\") )\n  def read_data(self, config, data_source):\n    self.data_sources[\".\"] = DataSource( config )\n    self.data_sources[\".\"].load_data()",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "args = {}\nif len(sys.argv) > 1:\n  paramsJson = open(sys.argv[1], 'r').read()\nelse:\n  paramsJson = sys.stdin.read()\nparamsJson = json.loads(paramsJson)\nprocessor = Processor(paramsJson)\nprocessor.process()",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "paramsJson",
+        "kind": 5,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "paramsJson = json.loads(paramsJson)\nprocessor = Processor(paramsJson)\nprocessor.process()",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "processor",
+        "kind": 5,
+        "importPath": "static.vendors.jqvmap.create.jqvmap",
+        "description": "static.vendors.jqvmap.create.jqvmap",
+        "peekOfCode": "processor = Processor(paramsJson)\nprocessor.process()",
+        "detail": "static.vendors.jqvmap.create.jqvmap",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0001_initial",
+        "description": "tickets.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Group',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "tickets.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0002_remove_group_supervisor_group_description",
+        "description": "tickets.migrations.0002_remove_group_supervisor_group_description",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='group',\n            name='supervisor',\n        ),\n        migrations.AddField(",
+        "detail": "tickets.migrations.0002_remove_group_supervisor_group_description",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0003_alter_ticket_created_by_alter_user_department",
+        "description": "tickets.migrations.0003_alter_ticket_created_by_alter_user_department",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0002_remove_group_supervisor_group_description'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='ticket',\n            name='created_by',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='created_tickets', to='tickets.user'),\n        ),",
+        "detail": "tickets.migrations.0003_alter_ticket_created_by_alter_user_department",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0004_alter_ticket_assigned_to_alter_ticket_created_by_and_more",
+        "description": "tickets.migrations.0004_alter_ticket_assigned_to_alter_ticket_created_by_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0003_alter_ticket_created_by_alter_user_department'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='ticket',\n            name='assigned_to',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='assigned_tickets', to=settings.AUTH_USER_MODEL),",
+        "detail": "tickets.migrations.0004_alter_ticket_assigned_to_alter_ticket_created_by_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0005_employee_serviceprovider_supervisor",
+        "description": "tickets.migrations.0005_employee_serviceprovider_supervisor",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0004_alter_ticket_assigned_to_alter_ticket_created_by_and_more'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Employee',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "tickets.migrations.0005_employee_serviceprovider_supervisor",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0006_remove_serviceprovider_group_and_more",
+        "description": "tickets.migrations.0006_remove_serviceprovider_group_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0005_employee_serviceprovider_supervisor'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='serviceprovider',\n            name='group',\n        ),",
+        "detail": "tickets.migrations.0006_remove_serviceprovider_group_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0007_ticket_on_hold_periods_ticket_time_in_progress",
+        "description": "tickets.migrations.0007_ticket_on_hold_periods_ticket_time_in_progress",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0006_remove_serviceprovider_group_and_more'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='ticket',\n            name='on_hold_periods',\n            field=models.JSONField(default=list),\n        ),",
+        "detail": "tickets.migrations.0007_ticket_on_hold_periods_ticket_time_in_progress",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0008_alter_ticket_on_hold_periods",
+        "description": "tickets.migrations.0008_alter_ticket_on_hold_periods",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0007_ticket_on_hold_periods_ticket_time_in_progress'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='ticket',\n            name='on_hold_periods',\n            field=models.JSONField(blank=True, default=list),\n        ),",
+        "detail": "tickets.migrations.0008_alter_ticket_on_hold_periods",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0009_ticket_notes",
+        "description": "tickets.migrations.0009_ticket_notes",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0008_alter_ticket_on_hold_periods'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='ticket',\n            name='notes',\n            field=models.TextField(blank=True, null=True),\n        ),",
+        "detail": "tickets.migrations.0009_ticket_notes",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0010_alter_ticket_difficulty_level",
+        "description": "tickets.migrations.0010_alter_ticket_difficulty_level",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0009_ticket_notes'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='ticket',\n            name='difficulty_level',\n            field=models.CharField(blank=True, choices=[('easy', 'Easy'), ('medium', 'Medium'), ('hard', 'Hard')], max_length=20, null=True),\n        ),",
+        "detail": "tickets.migrations.0010_alter_ticket_difficulty_level",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUserAdmin",
+        "kind": 6,
+        "importPath": "tickets.admin",
+        "description": "tickets.admin",
+        "peekOfCode": "class CustomUserAdmin(admin.ModelAdmin):\n    list_display = ('user', 'role', 'group')\n    list_filter = ('role', 'group')\nadmin.site.register(CustomUser, CustomUserAdmin)\nadmin.site.register(Group)\nadmin.site.register(Ticket)",
+        "detail": "tickets.admin",
+        "documentation": {}
+    },
+    {
+        "label": "TicketsConfig",
+        "kind": 6,
+        "importPath": "tickets.apps",
+        "description": "tickets.apps",
+        "peekOfCode": "class TicketsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'tickets'",
+        "detail": "tickets.apps",
+        "documentation": {}
+    },
+    {
+        "label": "UserRegistrationForm",
+        "kind": 6,
+        "importPath": "tickets.forms",
+        "description": "tickets.forms",
+        "peekOfCode": "class UserRegistrationForm(forms.ModelForm):\n    password = forms.CharField(widget=forms.PasswordInput)\n    confirm_password = forms.CharField(widget=forms.PasswordInput)\n    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'employe id' ,'label':'employee id'}))\n    class Meta:\n        model = User\n        fields = ['username', 'email', 'password']\n    def clean(self):\n        cleaned_data = super().clean()\n        password = cleaned_data.get('password')",
+        "detail": "tickets.forms",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUserRegistrationForm",
+        "kind": 6,
+        "importPath": "tickets.forms",
+        "description": "tickets.forms",
+        "peekOfCode": "class CustomUserRegistrationForm(forms.ModelForm):\n    class Meta:\n        model = CustomUser\n        fields = ['group']  # إزالة حقل الدور من النموذج\nfrom django import forms\nfrom .models import Ticket\nclass TicketCreationForm(forms.ModelForm):\n    class Meta:\n        model = Ticket\n        fields = ['title', 'description', 'group']",
+        "detail": "tickets.forms",
+        "documentation": {}
+    },
+    {
+        "label": "TicketCreationForm",
+        "kind": 6,
+        "importPath": "tickets.forms",
+        "description": "tickets.forms",
+        "peekOfCode": "class TicketCreationForm(forms.ModelForm):\n    class Meta:\n        model = Ticket\n        fields = ['title', 'description', 'group']",
+        "detail": "tickets.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Group",
+        "kind": 6,
+        "importPath": "tickets.models",
+        "description": "tickets.models",
+        "peekOfCode": "class Group(models.Model):\n    name = models.CharField(max_length=100)\n    description = models.TextField(blank=True, null=True)\n    def __str__(self):\n        return self.name\nclass CustomUser(models.Model):\n    ROLE_CHOICES = [\n        ('employee', 'Employee'),\n        ('supervisor', 'Supervisor'),\n        ('service_provider', 'Service Provider')",
+        "detail": "tickets.models",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUser",
+        "kind": 6,
+        "importPath": "tickets.models",
+        "description": "tickets.models",
+        "peekOfCode": "class CustomUser(models.Model):\n    ROLE_CHOICES = [\n        ('employee', 'Employee'),\n        ('supervisor', 'Supervisor'),\n        ('service_provider', 'Service Provider')\n    ]\n    role = models.CharField(max_length=20, choices=ROLE_CHOICES)\n    user  = models.OneToOneField(User, on_delete=models.CASCADE)  # الرقم الوظيفي أو معرف الخدمة\n    group = models.ForeignKey(Group, on_delete=models.CASCADE, null=True, blank=True)\n    def __str__(self):",
+        "detail": "tickets.models",
+        "documentation": {}
+    },
+    {
+        "label": "Ticket",
+        "kind": 6,
+        "importPath": "tickets.models",
+        "description": "tickets.models",
+        "peekOfCode": "class Ticket(models.Model):\n    OPEN = 'open'\n    IN_PROGRESS = 'in_progress'\n    ON_HOLD = 'on_hold'\n    RESOLVED = 'resolved'\n    CLOSED = 'closed'\n    STATUS_CHOICES = [\n        (OPEN, 'Open'),\n        (IN_PROGRESS, 'In Progress'),\n        (ON_HOLD, 'On Hold'),",
+        "detail": "tickets.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "tickets.urls",
+        "description": "tickets.urls",
+        "peekOfCode": "urlpatterns = [\n     path('accounts/login/', views.login_view, name='login'),\n    path('dashboard/', views.dashboard, name='dashboard'),\n     path('register/', views.register_view, name='register'),\n    # باقي المسارات...\n    path('create-ticket/', create_ticket_view, name='create_ticket'),\n    path('', profile_view, name='profile'),\n    path('logout/', logout_view, name='logout'),\n    path('ticket/<int:ticket_id>/close/', close_ticket_view, name='close_ticket'),  # مسار إغلاق التذكرة\n    path('supervisor_dashboard/', views.supervisor_dashboard, name='supervisor_dashboard'),",
+        "detail": "tickets.urls",
+        "documentation": {}
+    },
+    {
+        "label": "login_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def login_view(request):\n    if request.method == 'POST':\n        role = request.POST.get('role')\n        form = AuthenticationForm(request, data=request.POST)\n        if form.is_valid():\n            username = form.cleaned_data.get('username')\n            password = form.cleaned_data.get('password')\n            user = authenticate(username=username, password=password)\n            if user is not None:\n                login(request, user)",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def dashboard(request):\n    return render(request, 'dashboard.html')\ndef register_view(request):\n    if request.method == 'POST':\n        user_form = UserRegistrationForm(request.POST)\n        custom_user_form = CustomUserRegistrationForm(request.POST)\n        if user_form.is_valid() and custom_user_form.is_valid():\n            # حفظ المستخدم الأساسي\n            user = user_form.save(commit=False)\n            role = request.POST.get('role')",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "register_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def register_view(request):\n    if request.method == 'POST':\n        user_form = UserRegistrationForm(request.POST)\n        custom_user_form = CustomUserRegistrationForm(request.POST)\n        if user_form.is_valid() and custom_user_form.is_valid():\n            # حفظ المستخدم الأساسي\n            user = user_form.save(commit=False)\n            role = request.POST.get('role')\n            if role == 'employee':\n                default_password = 'defaultpassword123'  # تعيين كلمة مرور افتراضية للموظفين",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "create_ticket_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def create_ticket_view(request):\n    if request.method == 'POST':\n        form = TicketCreationForm(request.POST)\n        if form.is_valid():\n            ticket = form.save(commit=False)\n            ticket.created_by = request.user.customuser  # ربط التذكرة بالمستخدم الحالي\n            ticket.save()\n            return redirect('profile')  # الانتقال إلى صفحة البروفايل بعد الإنشاء\n    else:\n        form = TicketCreationForm()",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "profile_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def profile_view(request):\n    user_tickets = request.user.customuser.created_tickets.all()  # جلب التذاكر التي أنشأها المستخدم الحالي\n    return render(request, 'ticket/profile.html', {'tickets': user_tickets})\ndef logout_view(request):\n    logout(request)\n    return redirect('login')  # إعادة التوجيه إلى صفحة تسجيل الدخول بعد الخروج\n@login_required\ndef close_ticket_view(request, ticket_id):\n    ticket = get_object_or_404(Ticket, id=ticket_id, created_by=request.user.customuser)\n    # تحقق من أن التذكرة يمكن إغلاقها يدويًا فقط إذا كانت حالتها \"Resolved\"",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "logout_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def logout_view(request):\n    logout(request)\n    return redirect('login')  # إعادة التوجيه إلى صفحة تسجيل الدخول بعد الخروج\n@login_required\ndef close_ticket_view(request, ticket_id):\n    ticket = get_object_or_404(Ticket, id=ticket_id, created_by=request.user.customuser)\n    # تحقق من أن التذكرة يمكن إغلاقها يدويًا فقط إذا كانت حالتها \"Resolved\"\n    if ticket.status == Ticket.RESOLVED:\n        ticket.status = Ticket.CLOSED\n        ticket.time_resolved = timezone.now()  # تحديث وقت الحل عند الإغلاق اليدوي",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "close_ticket_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def close_ticket_view(request, ticket_id):\n    ticket = get_object_or_404(Ticket, id=ticket_id, created_by=request.user.customuser)\n    # تحقق من أن التذكرة يمكن إغلاقها يدويًا فقط إذا كانت حالتها \"Resolved\"\n    if ticket.status == Ticket.RESOLVED:\n        ticket.status = Ticket.CLOSED\n        ticket.time_resolved = timezone.now()  # تحديث وقت الحل عند الإغلاق اليدوي\n        ticket.save()\n    return redirect('profile')  # العودة إلى صفحة البروفايل بعد الإغلاق\n@login_required\ndef supervisor_dashboard(request):",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "supervisor_dashboard",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def supervisor_dashboard(request):\n    if request.user.customuser.role != 'supervisor':\n        return redirect('dashboard')\n    group_tickets = Ticket.objects.filter(group=request.user.customuser.group)\n    return render(request, 'dashboard/supervisor_dashboard.html', {'tickets': group_tickets})\n@login_required\ndef assign_ticket_view(request, ticket_id):\n    if request.user.customuser.role != 'supervisor':\n        return redirect('dashboard')\n    ticket = get_object_or_404(Ticket, id=ticket_id, group=request.user.customuser.group)",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "assign_ticket_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def assign_ticket_view(request, ticket_id):\n    if request.user.customuser.role != 'supervisor':\n        return redirect('dashboard')\n    ticket = get_object_or_404(Ticket, id=ticket_id, group=request.user.customuser.group)\n    if request.method == 'POST':\n        assigned_to_id = request.POST.get('assigned_to')\n        difficulty_level = request.POST.get('difficulty_level')\n        assigned_to = get_object_or_404(CustomUser, id=assigned_to_id, role='service_provider')\n        ticket.assigned_to = assigned_to\n        ticket.difficulty_level = difficulty_level",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "service_provider_dashboard",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def service_provider_dashboard(request):\n    if request.user.customuser.role != 'service_provider':\n        return redirect('dashboard')\n    assigned_tickets = Ticket.objects.filter(assigned_to=request.user.customuser)\n    return render(request, 'dashboard/service_provider_dashboard.html', {'tickets': assigned_tickets})\n@login_required\ndef update_ticket_status_view(request, ticket_id):\n    if request.user.customuser.role != 'service_provider':\n        return redirect('dashboard')\n    ticket = get_object_or_404(Ticket, id=ticket_id, assigned_to=request.user.customuser)",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "update_ticket_status_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def update_ticket_status_view(request, ticket_id):\n    if request.user.customuser.role != 'service_provider':\n        return redirect('dashboard')\n    ticket = get_object_or_404(Ticket, id=ticket_id, assigned_to=request.user.customuser)\n    if request.method == 'POST':\n        status = request.POST.get('status')\n        notes = request.POST.get('notes', '')\n        if status in [Ticket.ON_HOLD, Ticket.RESOLVED, Ticket.IN_PROGRESS]:\n            ticket.status = status\n            ticket.notes = notes",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]

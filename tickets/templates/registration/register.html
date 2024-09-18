@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}التسجيل{% endblock %}
+
+{% block auth %}
+<div class="container mt-4">
+    <h2 class="mb-4">التسجيل</h2>
+    <div style="text-align: center;">
+        <button onclick="showRegistrationForm('employee')" class="btn btn-primary">موظف</button>
+        <button onclick="showRegistrationForm('supervisor')" class="btn btn-primary">مشرف</button>
+        <button onclick="showRegistrationForm('service_provider')" class="btn btn-primary">مقدم خدمة</button>
+    </div>
+
+    <div id="registrationForm" style="display: none;" class="bg-light p-4 rounded shadow mt-4">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" id="role" name="role" value="">
+            <h3>معلومات الحساب</h3>
+            {{ user_form.as_p }}
+            
+            <h3>معلومات إضافية</h3>
+            {{ custom_user_form.as_p }}
+
+            <button type="submit" class="btn btn-success">تسجيل</button>
+        </form>
+    </div>
+    <p>لديك حساب بالفعل؟ <a href="{% url 'login' %}">تسجيل الدخول هنا</a></p>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-image: url('{% static "images/background.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function showRegistrationForm(role) {
+        document.getElementById('role').value = role;
+        document.getElementById('registrationForm').style.display = 'block';
+    }
+</script>
+{% endblock %}

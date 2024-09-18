@@ -1,0 +1,31 @@
+<!-- tickets/templates/tickets/assign_ticket.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Ticket</title>
+</head>
+<body>
+    <h1>Assign Ticket: {{ ticket.title }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="service_provider">Assign to:</label>
+        <select name="service_provider" id="service_provider">
+            {% for provider in service_providers %}
+            <option value="{{ provider.id }}">{{ provider.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="difficulty">Set Difficulty:</label>
+        <select name="difficulty" id="difficulty">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <button type="submit">Assign</button>
+    </form>
+</body>
+</html>

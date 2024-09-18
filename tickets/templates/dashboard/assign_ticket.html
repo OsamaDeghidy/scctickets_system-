@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}تعيين تذكرة{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>تعيين تذكرة: {{ ticket.title }}</h2>
+    <form method="post" class="bg-light p-4 rounded shadow">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="assigned_to">تعيين إلى:</label>
+            <select name="assigned_to" id="assigned_to" class="form-control">
+                {% for provider in service_providers %}
+                <option value="{{ provider.id }}">{{ provider.user.username }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group mb-3">
+            <label for="difficulty_level">مستوى الاهميه :</label>
+            <select name="difficulty_level" id="difficulty_level" class="form-control">
+                <option value="normal">عادي</option>
+                <option value="medium">متوسط</option>
+                <option value="high">مرتفع</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">تعيين</button>
+    </form>
+    <a href="{% url 'profile' %}" class="btn btn-secondary mt-3">العودة إلى الملف الشخصي</a>
+</div>
+{% endblock %}

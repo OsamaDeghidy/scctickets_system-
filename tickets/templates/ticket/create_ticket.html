@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}إنشاء تذكرة{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">إنشاء تذكرة جديدة</h2>
+    <form method="post" class="bg-light p-4 rounded shadow">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group mb-3">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div class="invalid-feedback">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">إنشاء تذكرة</button>
+    </form>
+    <a href="{% url 'profile' %}" class="btn btn-secondary mt-3">العودة إلى الملف الشخصي</a>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-image: url('{% static "images/background.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+    }
+</style>
+{% endblock %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Ticket</title>
+</head>
+<body>
+    <h2>Create a New Ticket</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Create Ticket</button>
+    </form>
+    <a href="{% url 'profile' %}">Back to Profile</a>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}الملف الشخصي{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4" >
+    <h2>تذاكرك</h2>
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">تذاكرك</strong>
+        </div>
+        <div class="card-body" >
+            <table id="tickets-table" class="table table-striped table-bordered dt-responsive nowrap" >
+                <thead>
+                    <tr>
+                        <th>العنوان</th>
+                        <th>الحالة</th>
+                        <th>تاريخ الإنشاء</th>
+                        <th>الوقت الإجمالي في التقدم</th>
+                        <th>إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ticket in tickets %}
+                    <tr>
+                        <td>{{ ticket.title }}</td>
+                        <td>{{ ticket.status }}</td>
+                        <td>{{ ticket.created_at }}</td>
+                        <td>{{ ticket.get_total_in_progress_time }}</td>
+                        <td>
+                            {% if ticket.status == 'resolved' %}
+                            <form action="{% url 'close_ticket' ticket.id %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-primary">إغلاق التذكرة</button>
+                            </form>
+                            <form action="{% url 'reopen_ticket' ticket.id %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-warning">إعادة فتح التذكرة</button>
+                            </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="{% url 'create_ticket' %}" class="btn btn-success mt-3">إنشاء تذكرة جديدة</a>
+    <a href="{% url 'logout' %}" class="btn btn-danger mt-3">تسجيل الخروج</a>
+
+
+<script>
+    $(document).ready(function() {
+        $('#tickets-table').DataTable({
+            "responsive": true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/ar.json"
+            }
+        });
+    });
+</script>
+</div>
+{% endblock %}

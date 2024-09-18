@@ -1,0 +1,182 @@
+ip /user name :    104.131.170.43         password :     osam0Esmael   
+
+
+ip : 104.131.170.43
+
+user : sammy         pass : osama
+
+db name myprojecto 
+db user: connect   db pass: connectdb
+
+pip install django-widget-tweaks
+pip install django-multiselectfield
+pip install django-import-export
+
+pip install isort
+pip install psycopg2-binary
+pip install numpy
+pip install requests
+pip install arabic-reshaper
+pip install django-widget-tweaks
+pip install django-multiselectfield
+pip install psycopg2
+pip install isort
+pip install numpy
+pip install requests
+pip install arabic_reshaper
+pip install django-import-export
+pip install django-simple-history
+pip install django-crispy-forms
+pip install django_tables2
+pip install django-filter
+
+
+--pip install django-crontab
+ 
+
+super user   username : osama      pass : osama
+
+
+
+ssh root@104.131.170.43
+su sammy   
+cd ~/myprojectdir
+
+source myprojectenv/bin/activate    
+python manage.py makemigrations
+ python manage.py migrate
+deactivate
+sudo systemctl restart gunicorn
+sudo systemctl daemon-reload
+sudo systemctl restart gunicorn.socket gunicorn.service
+sudo nginx -t && sudo systemctl restart nginx
+python manage.py collectstatic
+
+pip install -r requirements.txt
+pip freeze > requirements.txt
+python manage.py flush   # مسح الداتا بيز 
+
+
+pip install django-paypal
+
+
+
+
+
+
+
+
+
+python -m venv venv
+>venv\scripts\activate
+>pip3 install django
+>django-admin startproject main
+>django-admin startproject main .
+>py manage.py runserver
+py manage.py startapp
+>c
+cyrl c
+>py manage.py runserver 5000
+>django-admin startapp boards
+------>python manage.py makemigrations
+------>python manage.py migrate
+
+py manage.py createsuperuser
+
+pip install --upgrade pytz
+
+
+
+دولقتى فيه مشكله فى البرمشن   وهى اتلخبطت   ف هشرح  البرمشن تانى 
+ فى حاله انشاء تذكره ف كل المستخدمين لهم الحق ل لانشاء تزكره 
+ثم التزكره يتم ترحيلها الى مشرفيه الفئه المخصصه للتزكره    
+ بعدها يتم ترحيل التزكره من قبل المشرف الى مقدم الخدمه الذى يختاره وتغير حاه التذكره الى تم الاجراء  وهنا يبدا التايمر ب حساب وقت العمل على المشكله    ويكن للمشرف تحديد مدى صعوبه المشكله 
+بعد ها يمكن ل مقدم الخدمه تغيرر الحاله الى متوقف وهنا يتوقف التايمر اما ان تم تغير الحاله الى تم الحل يقوم التايمر بحساب وقت حل التذكره بالساعات   ويمكن ل مقدم الخمده اضافه ملاحظات   ( يمكن اضافه هذا الحقل )    لكل تذكره    
+اما عن المستخدم العادى       اريد منه الدخول عن طريق الرقم الوظيفى وان كان سيدخل لاول مره ايضا  لا اريد منه ادخال باوورد مطلقا اما باقى المستخدمين يجب ادخال باسوورد     اريد من المستخدم العادى  ادخال هذه البيانات اسمه 
+ايميله 
+رقمه الوظيفي  == اليوزر نيم  
+القسم اللي بيشتغل فيه 
+ بعدها يمكنه عمل تذكره 
+ بعدها فى حاله تم حل التذكره يظهر زر ل الاغلاق   اذا ضغط عليه يقوم باغلاق التذكره اما ان لم يضغط عليه فى بعد 24 ساعه  تتغير الحاله اتوماتكيا  ب اغلاق     
+
+
+اما عن المشرف ومقدمه الحدمه ارد منهم ادخال  اسمه 
+ايميله 
+رقمه الوظيفي === اليزر نيم
+القسم اللي بيشتغل فيه    والباسوورد 
+
+digitalocean
+
+email :aalmoniea@gmail.com
+pass : osam0Esmael
+
+
+host : 104.131.170.43  password: osam0Esmael
+
+godady 
+email: aalmoniea@gmail.com      password:Aa053053@
+
+doman: scctickets.com
+
+
+
+su sammy
+cd ~/myprojectdir
+source myprojectenv/bin/activate
+deactivate
+
+sudo apt install snap
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot/usr/bin/certbot
+sudo certbot --nginx
+sudo systemctl restart gunicorn
+sudo systemctl daemon-reload 
+sudo systemctl restart gunicorn.socket gunicorn.service
+sudo nginx -t && sudo systemctl restart nginx
+sudo nano /etc/nginx/sites-available/myproject
+sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+
+sudo nano /etc/nginx/sites-available/myproject
+server {
+    listen 80;
+    server_name 104.131.170.43;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/sammy/myprojectdir;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}
+
+
+
+
+
+ALLOWED_HOSTS = ['scctickets.com', 'www.scctickets.com']
+
+
+
+server {
+    listen 80;
+    server_name scctickets.com;
+
+    location / {
+        return 301 http://www.scctickets.com$request_uri;
+    }
+}
+
+server {
+    listen 80;
+    server_name www.scctickets.com;
+
+    location / {
+        proxy_pass http://unix:/run/gunicorn.sock; # or your internal Django server IP:Port
+        include proxy_params;
+        proxy_redirect off;
+    }
+}
+

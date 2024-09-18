@@ -1,0 +1,11 @@
+<!-- employee_login.html -->
+<form method="POST">
+    {% csrf_token %}
+    <label for="employee_id">Employee ID:</label>
+    <input type="text" name="employee_id" id="employee_id" required>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+
+    <button type="submit">Login</button>
+</form>
