@@ -444,6 +444,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -457,14 +473,6 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
         "documentation": {}
     },
     {
@@ -497,6 +505,15 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "pytz",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytz",
+        "description": "pytz",
+        "detail": "pytz",
         "documentation": {}
     },
     {
@@ -684,7 +701,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\n# ضبط التوقيت الافتراضي إلى التوقيت السعودي\nTIME_ZONE = 'Asia/Riyadh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -693,7 +710,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "TIME_ZONE = 'Asia/Riyadh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -977,6 +994,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "tickets.migrations.0011_alter_ticket_difficulty_level",
+        "description": "tickets.migrations.0011_alter_ticket_difficulty_level",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('tickets', '0010_alter_ticket_difficulty_level'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='ticket',\n            name='difficulty_level',\n            field=models.CharField(blank=True, choices=[('normal', 'عادي'), ('medium', 'متوسط'), ('high', 'مرتفع')], max_length=20, null=True),\n        ),",
+        "detail": "tickets.migrations.0011_alter_ticket_difficulty_level",
+        "documentation": {}
+    },
+    {
         "label": "CustomUserAdmin",
         "kind": 6,
         "importPath": "tickets.admin",
@@ -999,7 +1025,7 @@
         "kind": 6,
         "importPath": "tickets.forms",
         "description": "tickets.forms",
-        "peekOfCode": "class UserRegistrationForm(forms.ModelForm):\n    password = forms.CharField(widget=forms.PasswordInput)\n    confirm_password = forms.CharField(widget=forms.PasswordInput)\n    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'employe id' ,'label':'employee id'}))\n    class Meta:\n        model = User\n        fields = ['username', 'email', 'password']\n    def clean(self):\n        cleaned_data = super().clean()\n        password = cleaned_data.get('password')",
+        "peekOfCode": "class UserRegistrationForm(forms.ModelForm):\n    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))\n    confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))\n    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'employe id', 'label': 'employee id'}))\n    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))\n    class Meta:\n        model = User\n        fields = ['username', 'email', 'password']\n    def clean(self):\n        cleaned_data = super().clean()",
         "detail": "tickets.forms",
         "documentation": {}
     },
@@ -1008,7 +1034,7 @@
         "kind": 6,
         "importPath": "tickets.forms",
         "description": "tickets.forms",
-        "peekOfCode": "class CustomUserRegistrationForm(forms.ModelForm):\n    class Meta:\n        model = CustomUser\n        fields = ['group']  # إزالة حقل الدور من النموذج\nfrom django import forms\nfrom .models import Ticket\nclass TicketCreationForm(forms.ModelForm):\n    class Meta:\n        model = Ticket\n        fields = ['title', 'description', 'group']",
+        "peekOfCode": "class CustomUserRegistrationForm(forms.ModelForm):\n    group = forms.ChoiceField(choices=CustomUser.group, widget=forms.Select(attrs={'class': 'form-control'}))\n    class Meta:\n        model = CustomUser\n        fields = ['group']  # إزالة حقل الدور من النموذج\nclass TicketCreationForm(forms.ModelForm):\n    class Meta:\n        model = Ticket\n        fields = ['title', 'description', 'group']\n        widgets = {",
         "detail": "tickets.forms",
         "documentation": {}
     },
@@ -1017,7 +1043,7 @@
         "kind": 6,
         "importPath": "tickets.forms",
         "description": "tickets.forms",
-        "peekOfCode": "class TicketCreationForm(forms.ModelForm):\n    class Meta:\n        model = Ticket\n        fields = ['title', 'description', 'group']",
+        "peekOfCode": "class TicketCreationForm(forms.ModelForm):\n    class Meta:\n        model = Ticket\n        fields = ['title', 'description', 'group']\n        widgets = {\n            'title': forms.TextInput(attrs={'class': 'form-control'}),\n            'description': forms.Textarea(attrs={'class': 'form-control'}),\n            'group': forms.Select(attrs={'class': 'form-control'}),\n        }",
         "detail": "tickets.forms",
         "documentation": {}
     },
@@ -1116,7 +1142,16 @@
         "kind": 2,
         "importPath": "tickets.views",
         "description": "tickets.views",
-        "peekOfCode": "def close_ticket_view(request, ticket_id):\n    ticket = get_object_or_404(Ticket, id=ticket_id, created_by=request.user.customuser)\n    # تحقق من أن التذكرة يمكن إغلاقها يدويًا فقط إذا كانت حالتها \"Resolved\"\n    if ticket.status == Ticket.RESOLVED:\n        ticket.status = Ticket.CLOSED\n        ticket.time_resolved = timezone.now()  # تحديث وقت الحل عند الإغلاق اليدوي\n        ticket.save()\n    return redirect('profile')  # العودة إلى صفحة البروفايل بعد الإغلاق\n@login_required\ndef supervisor_dashboard(request):",
+        "peekOfCode": "def close_ticket_view(request, ticket_id):\n    ticket = get_object_or_404(Ticket, id=ticket_id, created_by=request.user.customuser)\n    # تحقق من أن التذكرة يمكن إغلاقها يدويًا فقط إذا كانت حالتها \"Resolved\"\n    if ticket.status == Ticket.RESOLVED:\n        ticket.status = Ticket.CLOSED\n        ticket.time_resolved = timezone.now()  # تحديث وقت الحل عند الإغلاق اليدوي\n        ticket.save()\n    return redirect('profile')  # العودة إلى صفحة البروفايل بعد الإغلاق\n@login_required\ndef reopen_ticket_view(request, ticket_id):",
+        "detail": "tickets.views",
+        "documentation": {}
+    },
+    {
+        "label": "reopen_ticket_view",
+        "kind": 2,
+        "importPath": "tickets.views",
+        "description": "tickets.views",
+        "peekOfCode": "def reopen_ticket_view(request, ticket_id):\n    ticket = get_object_or_404(Ticket, id=ticket_id, created_by=request.user.customuser)\n    # تحقق من أن التذكرة يمكن إعادة فتحها فقط إذا كانت حالتها \"Resolved\"\n    if ticket.status == Ticket.RESOLVED:\n        ticket.status = Ticket.OPEN\n        ticket.save()\n    return redirect('profile')  # العودة إلى صفحة البروفايل بعد إعادة الفتح\n@login_required\ndef supervisor_dashboard(request):\n    if request.user.customuser.role != 'supervisor':",
         "detail": "tickets.views",
         "documentation": {}
     },

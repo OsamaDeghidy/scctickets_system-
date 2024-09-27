@@ -6,34 +6,69 @@
 {% block content %}
 <div class="container mt-4">
     <h2>لوحة تحكم المشرف</h2>
-    <table class="table table-striped table-bordered">
+    <div class="mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="ابحث...">
+    </div>
+    <div class="table-responsive">
+    <table id="ticketsTable" class="table table-striped">
         <thead>
             <tr>
                 <th>العنوان</th>
                 <th>الحالة</th>
-                <th>تاريخ الإنشاء</th>
-                <th>الوقت الإجمالي في التقدم</th>
-                <th>أنشئت بواسطة</th>
-                <th>مرحل إلى</th>
                 <th>مستوى الأهمية</th>
-                <th>الإجراء</th>
+                <th>المجموعة</th>
+                
+                
+                <th class="d-none d-xl-table-cell">تاريخ الإنشاء</th>
+                <th class="d-none d-lg-table-cell">الوقت الإجمالي في التقدم</th>
+                <th class="d-none d-lg-table-cell">أنشئت بواسطة</th>
+                <th>مرحل إلى</th>
+               
+                
+                
+                <th>الإجراءات</th>
             </tr>
         </thead>
         <tbody>
             {% for ticket in tickets %}
             <tr>
                 <td>{{ ticket.title }}</td>
-                <td>{{ ticket.status }}</td>
-                <td>{{ ticket.created_at }}</td>
-                <td>{{ ticket.get_total_in_progress_time }}</td>
-                <td>{{ ticket.created_by.user.username }}</td>
+                <td>{{ ticket.get_status_display }}</td>
+                <td>{{ ticket.get_difficulty_level_display }}</td>
+                <td>{{ ticket.group.name }}</td>
+                
+
+                <td class="d-none d-xl-table-cell">{{ ticket.created_at }}</td>
+                <td class="d-none d-lg-table-cell">{{ ticket.get_total_in_progress_time }}</td>
+                <td class="d-none d-lg-table-cell">{{ ticket.created_by.user.username }}</td>
                 <td>{{ ticket.assigned_to.user.username }}</td>
-                <td>{{ ticket.difficulty_level }}</td>
-                <td><a href="{% url 'assign_ticket' ticket.id %}" class="btn btn-primary btn-sm">تعيين</a></td>
+                
+               
+                <td>
+                    <a href="{% url 'assign_ticket' ticket.id %}" class="btn btn-primary btn-sm">تعيين</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'profile' %}" class="btn btn-secondary mt-3">العودة إلى الملف الشخصي</a>
 </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var table = $('#ticketsTable').DataTable({
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.11.4/i18n/ar.json"
+            }
+        });
+
+        $('#searchInput').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+    });
+</script>
 {% endblock %}

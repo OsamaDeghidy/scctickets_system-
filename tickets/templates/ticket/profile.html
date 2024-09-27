@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}الملف الشخصي{% endblock %}
 
 {% block content %}
 
 <div class="container mt-4" >
-    <h2>تذاكرك</h2>
-    <div class="card">
-        <div class="card-header">
-            <strong class="card-title">تذاكرك</strong>
-        </div>
-        <div class="card-body" >
-            <table id="tickets-table" class="table table-striped table-bordered dt-responsive nowrap" >
-                <thead>
-                    <tr>
-                        <th>العنوان</th>
-                        <th>الحالة</th>
-                        <th>تاريخ الإنشاء</th>
-                        <th>الوقت الإجمالي في التقدم</th>
-                        <th>إجراءات</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for ticket in tickets %}
-                    <tr>
-                        <td>{{ ticket.title }}</td>
+    <h2>الملف الشخصي</h2>
+    <div class="mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="ابحث...">
+    </div>
+    <div class="table-responsive">
+    <table id="ticketsTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th>العنوان</th>
+                <th>الحالة</th>
+                <th class="d-none d-xl-table-cell">تاريخ الإنشاء</th>
+                <th class="d-none d-xl-table-cell">الوقت الإجمالي في التقدم</th>
+                <th>إجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket.title }}</td>
                         <td>{{ ticket.status }}</td>
-                        <td>{{ ticket.created_at }}</td>
-                        <td>{{ ticket.get_total_in_progress_time }}</td>
+                        <td class="d-none d-xl-table-cell">{{ ticket.created_at }}</td>
+                        <td class="d-none d-xl-table-cell">{{ ticket.get_total_in_progress_time }}</td>
                         <td>
                             {% if ticket.status == 'resolved' %}
                             <form action="{% url 'close_ticket' ticket.id %}" method="post" style="display:inline;">
@@ -40,25 +40,28 @@
                             </form>
                             {% endif %}
                         </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <a href="{% url 'create_ticket' %}" class="btn btn-success mt-3">إنشاء تذكرة جديدة</a>
-    <a href="{% url 'logout' %}" class="btn btn-danger mt-3">تسجيل الخروج</a>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}
 
-
+{% block extra_js %}
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#tickets-table').DataTable({
-            "responsive": true,
+        var table = $('#ticketsTable').DataTable({
             "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/ar.json"
+                "url": "https://cdn.datatables.net/plug-ins/1.11.4/i18n/ar.json"
             }
+        });
+
+        $('#searchInput').on('keyup', function() {
+            table.search(this.value).draw();
         });
     });
 </script>
-</div>
 {% endblock %}

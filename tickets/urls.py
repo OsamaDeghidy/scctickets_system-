@@ -20,4 +20,8 @@ urlpatterns = [
     path('service_provider_dashboard/', views.service_provider_dashboard, name='service_provider_dashboard'),
     path('update_ticket_status/<int:ticket_id>/', views.update_ticket_status_view, name='update_ticket_status'),
     path('ticket/<int:ticket_id>/reopen/', reopen_ticket_view, name='reopen_ticket'),
+    path('get_tickets_json/', views.get_tickets_json, name='get_tickets_json'),
+
+    
+
 ]

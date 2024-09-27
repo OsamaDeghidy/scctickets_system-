@@ -126,7 +126,7 @@ def supervisor_dashboard(request):
 @login_required
 def assign_ticket_view(request, ticket_id):
     if request.user.customuser.role != 'supervisor':
-        return redirect('dashboard')
+        return redirect('supervisor_dashboard')
 
     ticket = get_object_or_404(Ticket, id=ticket_id, group=request.user.customuser.group)
     if request.method == 'POST':
@@ -146,7 +146,7 @@ def assign_ticket_view(request, ticket_id):
 @login_required
 def service_provider_dashboard(request):
     if request.user.customuser.role != 'service_provider':
-        return redirect('dashboard')
+        return redirect('service_provider_dashboard')
 
     assigned_tickets = Ticket.objects.filter(assigned_to=request.user.customuser)
     return render(request, 'dashboard/service_provider_dashboard.html', {'tickets': assigned_tickets})
@@ -154,7 +154,7 @@ def service_provider_dashboard(request):
 @login_required
 def update_ticket_status_view(request, ticket_id):
     if request.user.customuser.role != 'service_provider':
-        return redirect('dashboard')
+        return redirect('service_provider_dashboard')
 
     ticket = get_object_or_404(Ticket, id=ticket_id, assigned_to=request.user.customuser)
     if request.method == 'POST':
@@ -177,3 +177,19 @@ def update_ticket_status_view(request, ticket_id):
         return redirect('service_provider_dashboard')
 
     return render(request, 'dashboard/update_ticket_status.html', {'ticket': ticket})
+
+
+from django.http import JsonResponse
+from django.core import serializers
+
+@login_required
+def get_tickets_json(request):
+    if request.user.customuser.role == 'supervisor':
+        tickets = Ticket.objects.filter(group=request.user.customuser.group)
+    elif request.user.customuser.role == 'service_provider':
+        tickets = Ticket.objects.filter(assigned_to=request.user.customuser)
+    else:
+        tickets = Ticket.objects.filter(created_by=request.user.customuser)
+
+    data = serializers.serialize('json', tickets)
+    return JsonResponse(data, safe=False)

@@ -5,187 +5,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}نظام إدارة التذاكر{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'vendors/themify-icons/css/themify-icons.css' %}">
-    <link rel="stylesheet" href="{% static 'vendors/flag-icon-css/css/flag-icon.min.css' %}">
-    <link rel="stylesheet" href="{% static 'vendors/selectFX/css/cs-skin-elastic.css' %}">
-    <link rel="stylesheet" href="{% static 'vendors/jqvmap/dist/jqvmap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-        }
-        .navbar-nav .nav-link {
-            color: black !important;
-            margin-left: 15px;
-        }
-        .navbar-nav .nav-link:hover {
-            color: red !important;
-        }
-        .navbar-brand {
-            font-weight: bold;
-        }
-        .footer {
+            font-family: 'Tajawal', sans-serif;
             background-color: #f8f9fa;
-            padding: 20px 0;
         }
-        .footer p {
-            margin: 0;
-            color: #6c757d;
-        }
-        .left-panel {
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
+        .sidebar {
             background-color: #343a40;
-            color: white;
-            padding-top: 20px;
+            min-height: 100vh;
         }
-        .left-panel a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
+        .sidebar .nav-link {
+            color: #fff;
         }
-        .left-panel a:hover {
-            background-color: #495057;
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: #007bff;
         }
         .content {
-            margin-left: 250px;
-            padding: 20px;
+            padding-top: 20px;
         }
-        @media (max-width: 768px) {
-            .left-panel {
-                width: 100%;
-                position: relative;
+        .navbar-brand {
+            background-color: rgba(255, 250, 250, 0.777);
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+        }
+        @media (max-width: 767.98px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100%;
+                z-index: 1000;
+                transition: 0.3s;
+            }
+            .sidebar.show {
+                right: 0;
             }
             .content {
-                margin-left: 0;
+                margin-right: 0;
             }
         }
-        .dataTables_wrapper .dataTables_filter {
-            float: right;
-            text-align: right;
-        }
-        .dataTables_wrapper .dataTables_paginate {
-            float: right;
-            text-align: right;
-        }
-        {% block extra_css %}
-        {% endblock %}
     </style>
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
-    {% block auth %}
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="./">نظام التذاكر</a>
-                <a class="navbar-brand hidden" href="./">نظام التذاكر</a>
-            </div>
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        {% if user.customuser.role == 'supervisor' %}
-                            <a href="{% url 'supervisor_dashboard' %}"> <i class="menu-icon fa fa-dashboard"></i>الرئيسية </a>
-                        {% elif user.customuser.role == 'service_provider' %}
-                            <a href="{% url 'service_provider_dashboard' %}"> <i class="menu-icon fa fa-dashboard"></i>الرئيسية </a>
-                        {% else %}
-                            <a href="{% url 'profile' %}"> <i class="menu-icon fa fa-dashboard"></i>الرئيسية </a>
-                        {% endif %}
-                    </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'profile' %}"><img src="{% static 'images/LOGO.png' %}" alt="LOGO">  </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
-                    <li>
-                        <a href="{% url 'create_ticket' %}"> <i class="menu-icon ti-email"></i>إنشاء تذكرة </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'profile' %}"> <i class="menu-icon ti-email"></i>قائمة التذاكر</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'logout' %}"> <i class="menu-icon ti-email"></i>تسجيل الخروج </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">تسجيل الخروج</a>
+                        </li>
                     {% else %}
-                    <li>
-                        <a href="{% url 'login' %}"> <i class="menu-icon ti-email"></i>تسجيل الدخول </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'register' %}"> <i class="menu-icon ti-email"></i>التسجيل </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">تسجيل الدخول</a>
+                        </li>
                     {% endif %}
-                    
-                 
-                    
-                    
                 </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside><!-- /#left-panel -->
+            </div>
+        </div>
+    </nav>
 
-  
-        <main class="container mt-4">
-            {% if messages %}
-            <div class="messages">
-                {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            {% if user.customuser.role == 'supervisor' %}
+                                <a class="nav-link active" href="{% url 'supervisor_dashboard' %}">
+                            {% elif user.customuser.role == 'service_provider' %}
+                                <a class="nav-link active" href="{% url 'service_provider_dashboard' %}">
+                            {% else %}
+                                <a class="nav-link active" href="{% url 'profile' %}">
+                            {% endif %}
+                                <i class="fas fa-home"></i> الرئيسية
+                            </a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'create_ticket' %}">
+                                <i class="fas fa-plus-circle"></i> إنشاء تذكرة
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'profile' %}">
+                                <i class="fas fa-ticket-alt"></i> قائمة التذاكر
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">
+                                <i class="fas fa-user-plus"></i> التسجيل
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
                 </div>
-                {% endfor %}
-            </div>
-            {% endif %}
-<div id="right-panel" class="right-panel">
-            {% block content %}
-            {% endblock %}
-</div>
-        </main>
+            </nav>
 
-
-        <footer class="footer mt-5 py-3 bg-light">
-            <div class="container text-center">
-                <p>&copy; 2023 نظام إدارة التذاكر. جميع الحقوق محفوظة.</p>
-            </div>
-        </footer>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% block content %}{% endblock %}
+            </main>
+        </div>
     </div>
-    {% endblock %}
-    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
-    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'assets/js/main.js' %}"></script>
-    <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
-    <script src="{% static 'assets/js/dashboard.js' %}"></script>
-    <script src="{% static 'assets/js/widgets.js' %}"></script>
-    <script src="{% static 'vendors/jqvmap/dist/jquery.vmap.min.js' %}"></script>
-    <script src="{% static 'vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
-    <script src="{% static 'vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-    <script>
-        (function($) {
-            "use strict";
 
-            jQuery('#vmap').vectorMap({
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: ['#1de9b6', '#03a9f5'],
-                normalizeFunction: 'polynomial'
+    <footer class="footer mt-auto">
+        <div class="container text-center">
+            <span>&copy; 2024 نظام إدارة التذاكر. جميع الحقوق محفوظة.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sidebar = document.getElementById('sidebar');
+            var navbarToggler = document.querySelector('.navbar-toggler');
+            
+            navbarToggler.addEventListener('click', function() {
+                sidebar.classList.toggle('show');
             });
-        })(jQuery);
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function(event) {
+                var isClickInsideNavbar = navbarToggler.contains(event.target);
+                var isClickInsideSidebar = sidebar.contains(event.target);
+                
+                if (!isClickInsideNavbar && !isClickInsideSidebar && sidebar.classList.contains('show')) {
+                    sidebar.classList.remove('show');
+                }
+            });
+        });
     </script>
-    {% block extra_js %}
-    {% endblock %}
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

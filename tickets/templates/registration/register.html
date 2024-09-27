@@ -3,29 +3,43 @@
 
 {% block title %}التسجيل{% endblock %}
 
-{% block auth %}
+{% block content %}
 <div class="container mt-4">
-    <h2 class="mb-4">التسجيل</h2>
-    <div style="text-align: center;">
-        <button onclick="showRegistrationForm('employee')" class="btn btn-primary">موظف</button>
-        <button onclick="showRegistrationForm('supervisor')" class="btn btn-primary">مشرف</button>
-        <button onclick="showRegistrationForm('service_provider')" class="btn btn-primary">مقدم خدمة</button>
-    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">التسجيل</h2>
+                    <div class="text-center mb-4">
+                        <button onclick="showRegistrationForm('employee')" class="btn btn-primary mx-2">موظف</button>
+                        <button onclick="showRegistrationForm('supervisor')" class="btn btn-primary mx-2">مشرف</button>
+                        <button onclick="showRegistrationForm('service_provider')" class="btn btn-primary mx-2">مقدم خدمة</button>
+                    </div>
 
-    <div id="registrationForm" style="display: none;" class="bg-light p-4 rounded shadow mt-4">
-        <form method="post">
-            {% csrf_token %}
-            <input type="hidden" id="role" name="role" value="">
-            <h3>معلومات الحساب</h3>
-            {{ user_form.as_p }}
-            
-            <h3>معلومات إضافية</h3>
-            {{ custom_user_form.as_p }}
+                    <div id="registrationForm" style="display: none;">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="hidden" id="role" name="role" value="">
+                            <h4>معلومات الحساب</h4>
+                            <div class="mb-3">
+                                {{ user_form.as_p }}
+                            </div>
+                            
+                            <h4 class="text-center mb-4">معلومات إضافية</h4>
+                            <div class="mb-3">
+                                {{ custom_user_form.as_p }}
+                            </div>
 
-            <button type="submit" class="btn btn-success">تسجيل</button>
-        </form>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">تسجيل</button>
+                            </div>
+                        </form>
+                    </div>
+                    <p class="text-center mt-3">لديك حساب بالفعل؟ <a href="{% url 'login' %}">تسجيل الدخول هنا</a></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <p>لديك حساب بالفعل؟ <a href="{% url 'login' %}">تسجيل الدخول هنا</a></p>
 </div>
 {% endblock %}
 
@@ -37,10 +51,8 @@
         background-position: center;
         background-repeat: no-repeat;
     }
-    .container {
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        padding: 20px;
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
     }
 </style>
 {% endblock %}

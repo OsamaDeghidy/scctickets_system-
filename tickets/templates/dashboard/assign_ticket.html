@@ -5,27 +5,39 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h2>تعيين تذكرة: {{ ticket.title }}</h2>
-    <form method="post" class="bg-light p-4 rounded shadow">
-        {% csrf_token %}
-        <div class="form-group mb-3">
-            <label for="assigned_to">تعيين إلى:</label>
-            <select name="assigned_to" id="assigned_to" class="form-control">
-                {% for provider in service_providers %}
-                <option value="{{ provider.id }}">{{ provider.user.username }}</option>
-                {% endfor %}
-            </select>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">تعيين تذكرة: {{ ticket.title }}</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="assigned_to" class="form-label">تعيين إلى:</label>
+                            <select name="assigned_to" id="assigned_to" class="form-select">
+                                {% for provider in service_providers %}
+                                <option value="{{ provider.id }}">{{ provider.user.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="difficulty_level" class="form-label">مستوى الأهمية:</label>
+                            <select name="difficulty_level" id="difficulty_level" class="form-select">
+                                <option value="normal">عادي</option>
+                                <option value="medium">متوسط</option>
+                                <option value="high">مرتفع</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">تعيين</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a href="{% url 'profile' %}" class="btn btn-secondary">العودة إلى الملف الشخصي</a>
+            </div>
         </div>
-        <div class="form-group mb-3">
-            <label for="difficulty_level">مستوى الاهميه :</label>
-            <select name="difficulty_level" id="difficulty_level" class="form-control">
-                <option value="normal">عادي</option>
-                <option value="medium">متوسط</option>
-                <option value="high">مرتفع</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">تعيين</button>
-    </form>
-    <a href="{% url 'profile' %}" class="btn btn-secondary mt-3">العودة إلى الملف الشخصي</a>
+    </div>
 </div>
 {% endblock %}
