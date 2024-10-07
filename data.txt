@@ -118,6 +118,8 @@ email: aalmoniea@gmail.com      password:Aa053053@
 
 doman: scctickets.com
 
+gmail account 
+email: Admin@scctickets.com      password : Aa053053@
 
 
 su sammy
@@ -187,7 +189,7 @@ server {
 echo "# scctickets_system-" >> README.md
 git init
 git add README.md
-git commit -m "first commit"
+git commit -m "lastfar commit"
 git branch -M main
 git remote add origin https://github.com/OsamaDeghidy/scctickets_system-.git
 $ git push -u origin  master

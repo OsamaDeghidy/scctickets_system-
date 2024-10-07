@@ -20,7 +20,7 @@
                 
                 
                 <th class="d-none d-xl-table-cell">تاريخ الإنشاء</th>
-                <th class="d-none d-lg-table-cell">الوقت الإجمالي في التقدم</th>
+                <th class="d-none d-lg-table-cell"> عمر الطلب </th>
                 <th class="d-none d-lg-table-cell">أنشئت بواسطة</th>
                 <th>مرحل إلى</th>
                
@@ -32,7 +32,7 @@
         <tbody>
             {% for ticket in tickets %}
             <tr>
-                <td>{{ ticket.title }}</td>
+                <td><a href="{% url 'ticket_detail' ticket.id %}">{{ ticket.title }}</a></td>
                 <td>{{ ticket.get_status_display }}</td>
                 <td>{{ ticket.get_difficulty_level_display }}</td>
                 <td>{{ ticket.group.name }}</td>

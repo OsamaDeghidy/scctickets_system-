@@ -22,6 +22,9 @@ class CustomUser(models.Model):
     role = models.CharField(max_length=20, choices=ROLE_CHOICES)
     user  = models.OneToOneField(User, on_delete=models.CASCADE)  # الرقم الوظيفي أو معرف الخدمة
     group = models.ForeignKey(Group, on_delete=models.CASCADE, null=True, blank=True)
+    verification_code = models.CharField(max_length=6, blank=True, null=True,verbose_name='كود التحقق')
+    is_verified = models.BooleanField(default=False)
+
     
     def __str__(self):
         return self.user.username
@@ -47,22 +50,22 @@ class Ticket(models.Model):
         ('high', 'مرتفع')
     ]
     
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=OPEN)
-    created_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, related_name='created_tickets')
-    assigned_to = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, related_name='assigned_tickets')
-    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255,verbose_name='العنوان')
+    description = models.TextField(verbose_name='الوصف')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=OPEN,verbose_name='الحالة')
+    created_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, related_name='created_tickets',verbose_name='أنشأ بواسطة')
+    assigned_to = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, related_name='assigned_tickets',verbose_name='تم تعيينها إلى')
+    group = models.ForeignKey(Group, on_delete=models.CASCADE,verbose_name='المجموعة')
     difficulty_level = models.CharField(max_length=20, choices=DIFFICULTY_CHOICES, null=True, blank=True)
-    time_started = models.DateTimeField(null=True, blank=True)
-    time_resolved = models.DateTimeField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    time_started = models.DateTimeField(null=True, blank=True,verbose_name='تاريخ البدء')
+    time_resolved = models.DateTimeField(null=True, blank=True,verbose_name='تاريخ الحل')
+    created_at = models.DateTimeField(auto_now_add=True,verbose_name='تاريخ الإنشاء')
+    updated_at = models.DateTimeField(auto_now=True,verbose_name='تاريخ التحديث')
     
     # New fields to track on hold periods
-    time_in_progress = models.DateTimeField(null=True, blank=True)
-    on_hold_periods = models.JSONField(default=list, blank=True)  # List to track on-hold periods [(start_time, end_time), ...]
-    notes = models.TextField(blank=True, null=True)  # Field to store notes
+    time_in_progress = models.DateTimeField(null=True, blank=True,verbose_name='تاريخ التقدم')
+    on_hold_periods = models.JSONField(default=list, blank=True,verbose_name='فترات التعليق')  # List to track on-hold periods [(start_time, end_time), ...]
+    notes = models.TextField(blank=True, null=True,verbose_name='الملاحظات')  # Field to store notes
 
     def save(self, *args, **kwargs):
         # تحديد حالة التذكرة الجديدة

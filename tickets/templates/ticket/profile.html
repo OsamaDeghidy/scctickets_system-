@@ -17,14 +17,14 @@
                 <th>العنوان</th>
                 <th>الحالة</th>
                 <th class="d-none d-xl-table-cell">تاريخ الإنشاء</th>
-                <th class="d-none d-xl-table-cell">الوقت الإجمالي في التقدم</th>
+                <th class="d-none d-xl-table-cell">  عمر الطلب  </th>
                 <th>إجراءات</th>
             </tr>
         </thead>
         <tbody>
             {% for ticket in tickets %}
             <tr>
-                <td>{{ ticket.title }}</td>
+                <td><a href="{% url 'ticket_detail' ticket.id %}">{{ ticket.title }}</a></td>
                         <td>{{ ticket.status }}</td>
                         <td class="d-none d-xl-table-cell">{{ ticket.created_at }}</td>
                         <td class="d-none d-xl-table-cell">{{ ticket.get_total_in_progress_time }}</td>

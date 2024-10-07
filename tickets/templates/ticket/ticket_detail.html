@@ -1,0 +1,29 @@
+{% extends 'base.html' %}{%block title%}تذكرة {{ticket.title}}{%endblock%}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">{{ ticket.title }}</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>الوصف:</strong> {{ ticket.description }}</li>
+                        <li class="list-group-item"><strong>الحالة:</strong> {{ ticket.get_status_display }}</li>
+                        <li class="list-group-item"><strong>أنشأ بواسطة:</strong> {{ ticket.created_by.user.username }}</li>
+                        <li class="list-group-item"><strong>تم تعيينها إلى:</strong> {{ ticket.assigned_to.user.username }}</li>
+                        <li class="list-group-item"><strong>المجموعة:</strong> {{ ticket.group.name }}</li>
+                        <li class="list-group-item"><strong>مستوى الصعوبة:</strong> {{ ticket.get_difficulty_level_display }}</li>
+                        <li class="list-group-item"><strong>تاريخ الإنشاء:</strong> {{ ticket.created_at|date:"d M Y, H:i" }}</li>
+                        <li class="list-group-item"><strong>تاريخ التحديث:</strong> {{ ticket.updated_at|date:"d M Y, H:i" }}</li>
+                        <li class="list-group-item"><strong> عمر الطلب :</strong> {{ ticket.get_total_in_progress_time }}</li>
+                        <li class="list-group-item"><strong>الملاحظات:</strong> {{ ticket.notes }}</li>
+                        
+                    </ul>
+                    <a href="{% url 'profile' %}" class="btn btn-secondary mt-3">العودة إلى البروفايل</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -135,5 +135,13 @@ LOGOUT_REDIRECT_URL = 'login'  # أو أي URL تود إعادة التوجيه 
 
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
-
+#EMAIL_HOST_USER = "osamaeldeghadey@gmail.com"
+#EMAIL_HOST_PASSWORD = "awrb wbci awgw nitx"
+#ktds rgeu jqkm zquu
+EMAIL_HOST_USER = "Admin@scctickets.com"
+EMAIL_HOST_PASSWORD = "ktds rgeu jqkm zquu"

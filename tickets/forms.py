@@ -32,7 +32,13 @@ class TicketCreationForm(forms.ModelForm):
         model = Ticket
         fields = ['title', 'description', 'group']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'description': forms.Textarea(attrs={'class': 'form-control'}),
-            'group': forms.Select(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'العنوان ', 'label': 'العنوان '}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'الوصف ', 'label': 'الوصف '}),
+            'group': forms.Select(attrs={'class': 'form-control', 'placeholder': 'المجموعه ', 'label': 'المجموعه '}),
         }
+
+
+from django import forms
+
+class VerificationCodeForm(forms.Form):
+       code = forms.CharField(max_length=6, widget=forms.TextInput(attrs={'placeholder': 'Enter verification code','class': 'form-control','label': 'ادخل كود التحقق'}))

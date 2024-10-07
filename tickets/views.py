@@ -6,10 +6,11 @@ from django.utils import timezone
 import pytz
 from .models import CustomUser, Ticket
 from .forms import UserRegistrationForm, CustomUserRegistrationForm, TicketCreationForm
+from .utils import send_notification_email
+
 
 def login_view(request):
     if request.method == 'POST':
-        role = request.POST.get('role')
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
@@ -17,9 +18,11 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                # توجيه المستخدم بناءً على دوره
+                # إرسال كود التحقق للموظفين فقط
                 if user.customuser.role == 'employee':
-                    return redirect('profile')
+                    send_verification_code(user)
+                    return redirect('verify_email')  # الانتقال إلى صفحة التحقق
+                # توجيه المستخدم بناءً على دوره
                 elif user.customuser.role == 'supervisor':
                     return redirect('supervisor_dashboard')
                 elif user.customuser.role == 'service_provider':
@@ -77,6 +80,13 @@ def create_ticket_view(request):
             ticket = form.save(commit=False)
             ticket.created_by = request.user.customuser  # ربط التذكرة بالمستخدم الحالي
             ticket.save()
+            send_notification_email(
+               'تم إنشاء تذكرة جديدة',
+               f'تم إنشاء تذكرة جديدة بعنوان: {ticket.title}',
+               [ticket.created_by.user.email]
+           )
+            
+            
             return redirect('profile')  # الانتقال إلى صفحة البروفايل بعد الإنشاء
     else:
         form = TicketCreationForm()
@@ -138,6 +148,11 @@ def assign_ticket_view(request, ticket_id):
         ticket.difficulty_level = difficulty_level
         ticket.status = Ticket.IN_PROGRESS
         ticket.save()
+        send_notification_email(
+               'تم تعديل التذكره اذهب ل تفقدها ',
+               f'تم تعديل التذكره اذهب ل تفقدها :{ticket.title}',
+               [ticket.created_by.user.email]
+           )
         return redirect('supervisor_dashboard')
 
     service_providers = CustomUser.objects.filter(role='service_provider', group=request.user.customuser.group)
@@ -174,6 +189,11 @@ def update_ticket_status_view(request, ticket_id):
                 if ticket.on_hold_periods and ticket.on_hold_periods[-1]['end'] is None:
                     ticket.on_hold_periods[-1]['end'] = timezone.now().astimezone(sa_tz).isoformat()
             ticket.save()
+            send_notification_email(
+               'تم تعديل التذكره اذهب ل تفقدها ',
+               f'تم تعديل التذكره اذهب ل تفقدها :{ticket.title}',
+               [ticket.created_by.user.email]
+           )
         return redirect('service_provider_dashboard')
 
     return render(request, 'dashboard/update_ticket_status.html', {'ticket': ticket})
@@ -193,3 +213,57 @@ def get_tickets_json(request):
 
     data = serializers.serialize('json', tickets)
     return JsonResponse(data, safe=False)
+
+
+
+
+import random
+from django.core.mail import send_mail
+from django.conf import settings
+
+def send_verification_code(user):
+    code = str(random.randint(100000, 999999))
+    user.customuser.verification_code = code
+    user.customuser.save()
+    try:
+        send_mail(
+            'Verification Code',
+            f'Your verification code is: {code}',
+            settings.EMAIL_HOST_USER,
+            [user.email],
+            fail_silently=False,
+        )
+        print(f"Verification code {code} sent to {user.email}")
+    except Exception as e:
+        print(f"Failed to send email: {e}")
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from .forms import VerificationCodeForm
+
+@login_required
+def verify_email_view(request):
+    if request.method == 'POST':
+        form = VerificationCodeForm(request.POST)
+        if form.is_valid():
+            code = form.cleaned_data['code']
+            if code == request.user.customuser.verification_code:  # استخدم العلاقة العكسية
+                request.user.customuser.is_verified = True
+                request.user.customuser.save()
+                return redirect('profile')  # الانتقال إلى الصفحة الرئيسية بعد التحقق
+            else:
+                form.add_error('code', 'Invalid verification code.')
+    else:
+        form = VerificationCodeForm()
+    return render(request, 'registration/verify_email.html', {'form': form})
+
+@login_required
+def resend_verification_code_view(request):
+    if request.user.customuser.role == 'employee':
+        send_verification_code(request.user)
+    return redirect('verify_email')
+
+
+@login_required
+def ticket_detail_view(request, ticket_id):
+    ticket = get_object_or_404(Ticket, id=ticket_id)
+    return render(request, 'ticket/ticket_detail.html', {'ticket': ticket})

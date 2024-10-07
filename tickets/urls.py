@@ -21,7 +21,8 @@ urlpatterns = [
     path('update_ticket_status/<int:ticket_id>/', views.update_ticket_status_view, name='update_ticket_status'),
     path('ticket/<int:ticket_id>/reopen/', reopen_ticket_view, name='reopen_ticket'),
     path('get_tickets_json/', views.get_tickets_json, name='get_tickets_json'),
-
-    
+    path('verify_email/', verify_email_view, name='verify_email'),
+    path('resend-verification-code/', resend_verification_code_view, name='resend_verification_code'),
+    path('ticket/<int:ticket_id>/', ticket_detail_view, name='ticket_detail'),
 
 ]
